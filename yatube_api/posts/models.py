@@ -39,15 +39,12 @@ class Comment(models.Model):
 
 
 class Follow(models.Model):
-    """Model of followers."""
-
     user = models.ForeignKey(
         User,
         on_delete=models.CASCADE,
         verbose_name='Подписчик',
         related_name='follower',
     )
-
     following = models.ForeignKey(
         User,
         on_delete=models.CASCADE,

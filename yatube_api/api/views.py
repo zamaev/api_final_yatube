@@ -44,11 +44,10 @@ class CommentViewSet(viewsets.ModelViewSet):
 class CreateListViewSet(mixins.CreateModelMixin,
                         mixins.ListModelMixin,
                         viewsets.GenericViewSet):
-    """ViewSet for Create and List."""
+    pass
 
 
 class FollowViewSet(CreateListViewSet):
-    """Subscribe ViewSet."""
     serializer_class = FollowSerializer
     filter_backends = (filters.SearchFilter,)
     search_fields = ('following__username',)
